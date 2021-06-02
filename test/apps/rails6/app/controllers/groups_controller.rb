@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
   def render_commands
     render text: `#{params.require('name')} some optional text`
     render json: `#{params.require('name')} some optional text`
+    render(TestComponent.new(params.require('name')))
   end
 
   def squish_sql
